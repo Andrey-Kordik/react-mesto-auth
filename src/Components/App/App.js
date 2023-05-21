@@ -10,7 +10,7 @@ import EditProfilePopup from '../../Components/EditProfilePopup/EditProfilePopup
 import EditAvatarPopup from '../EditAvatarPopup/EditAvatarPopup.js';
 import AddPlacePopup from '../AddPlacePopup/AddPlacePopup.js'
 import PopupWithConfirm from '../PopupWithConfirm/PopupWithConfirm.js'
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes, Link } from 'react-router-dom';
 import Login from '../Login/Login.js';
 import Register from '../Register/Register.js';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute.js';
@@ -52,7 +52,7 @@ function App() {
       .catch(err => {
         console.log(err.message)
       })
-  }, [])
+  }, [isLoggedIn])
 
   useEffect(() => {
     api.getCards(currentCards)
@@ -62,7 +62,7 @@ function App() {
       .catch(err => {
         console.log(err.message)
       })
-  }, [])
+  }, [isLoggedIn])
 
   function handleCardLike(card) {
 
@@ -270,7 +270,7 @@ function App() {
                 />
               } />
               <Route path="/" element={isLoggedIn ? <Navigate to='/' replace /> : <Navigate to='/sign-in' replace />} />
-              <Route path='*' element={<h2>Ошибка 404</h2>} />
+              <Route path='*' element={<Link to={"/sign-in"} />} />
             </Routes>
             <Footer />
           </div>

@@ -1,13 +1,7 @@
 
-import Card from '../Card/Card'
-import { useContext } from 'react';
-import { CurrentUserContext } from '../../contexts/CurrentUserContext.js'
-import { CurrentCardsContext } from '../../contexts/CurrentCardsContext.js'
+import Card from '../Card/Card.js'
 
 function Main({ onEditProfile, onAddPlace, onEditAvatar, onCardClick, user, cards, onCardLike, onCardDeleteRequest }) {
-
-    user = useContext(CurrentUserContext)
-    cards = useContext(CurrentCardsContext)
 
     return (
         <main>
