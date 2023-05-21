@@ -181,7 +181,10 @@ function App() {
       .then((data) => {
         localStorage.setItem("jwt", data.token)
         setLoggedIn(true)
-        navigate('/mesto-react')
+        navigate('/')
+      })
+      .catch(err => {
+        console.log(err.message)
       })
   }
 
@@ -206,7 +209,7 @@ function App() {
         if (data) {
           setUserData(data.data.email)
           setLoggedIn(true)
-          navigate('/mesto-react')
+          navigate('/')
         }
         else {
           setLoggedIn(false)
@@ -243,7 +246,7 @@ function App() {
             />
 
             <Routes>
-              <Route path="/mesto-react" element={<ProtectedRoute element={<Main
+              <Route path="/" element={<ProtectedRoute element={<Main
                 onEditProfile={handleEditProfileClick}
                 onAddPlace={handleAddPlaceClick}
                 onEditAvatar={handleEditAvatarClick}
@@ -266,7 +269,7 @@ function App() {
 
                 />
               } />
-              <Route path="/" element={isLoggedIn ? <Navigate to='/mesto-react' replace /> : <Navigate to='/sign-in' replace />} />
+              <Route path="/" element={isLoggedIn ? <Navigate to='/' replace /> : <Navigate to='/sign-in' replace />} />
               <Route path='*' element={<h2>Ошибка 404</h2>} />
             </Routes>
             <Footer />
