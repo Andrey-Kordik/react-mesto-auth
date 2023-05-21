@@ -9,7 +9,7 @@ function PopupWithForm({ name, title, children, isOpen, onClose, buttonText, onS
         <form className="popup__container" name={`${name}`} onSubmit={onSubmit}>
           <fieldset className="popup__set">
             {children}
-            <button className="popup__savebutton" id="addcard" type="submit">{renderLoading ?
+            <button className="popup__savebutton" type="submit">{renderLoading ?
               loadingButtonText
               :
               buttonText}</button>

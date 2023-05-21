@@ -9,6 +9,7 @@
     border-bottom: 1px solid #bcbcc4;
     background-color: transparent;
     outline: none;
+    box-shadow: none;
 }
 
 .popup__info:focus {
