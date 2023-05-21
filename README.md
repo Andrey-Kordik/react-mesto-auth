@@ -18,5 +18,5 @@
 
 ###### Ccылка на работу
 
-* ht
+* https://andrey-kordik.github.io/react-mesto-auth/
 
