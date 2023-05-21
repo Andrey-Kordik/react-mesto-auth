@@ -21,7 +21,7 @@ function Header({ userData, onSignOut, isLoggedIn }) {
                 (
                     <div className='header__container'>
                         <p className='header__user-email'>{userData}</p>
-                        <button className='header__button' onClick={handleSignOut}>Выйти</button>
+                        <NavLink className='header__button' onClick={handleSignOut}>Выйти</NavLink>
                     </div>
                 )
             }
